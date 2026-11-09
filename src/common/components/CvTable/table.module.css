@@ -1,0 +1,125 @@
+
+.tableContainer {
+  padding: 28px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #20203e, #29294d);
+  box-shadow: 0 15px 35px rgba(20, 20, 55, 0.2);
+  min-width: 0;
+}
+
+.tableHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 12px;
+}
+
+.tableHeader h2 {
+  color: #fff;
+  font-size: 23px;
+  margin: 0 0 7px;
+}
+
+.tableHeader p {
+  color: #aaa9c8;
+  font-size: 13px;
+  margin: 0;
+}
+
+.count {
+  padding: 8px 13px;
+  border-radius: 20px;
+  background: rgba(130, 101, 245, 0.2);
+  color: #b9aaff;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.emptyState {
+  padding: 30px 15px;
+  text-align: center;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+}
+
+.emptyState p {
+  color: #aaa9c8;
+  font-size: 14px;
+}
+
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table th {
+  padding: 15px 12px;
+  color: #aaa9c8;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.table td {
+  padding: 16px 12px;
+  color: #e4e3f4;
+  font-size: 13px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  overflow-wrap: anywhere;
+}
+
+.table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.showBtn,
+.deleteBtn {
+  padding: 8px 11px;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.showBtn {
+  background: rgba(130, 101, 245, 0.2);
+  color: #b9aaff;
+}
+
+.showBtn:hover {
+  background: #8265f5;
+  color: #fff;
+}
+
+.deleteBtn {
+  background: rgba(255, 90, 110, 0.12);
+  color: #ff8794;
+}
+
+.deleteBtn:hover {
+  background: #e84d65;
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .tableContainer {
+    padding: 18px;
+  }
+}
