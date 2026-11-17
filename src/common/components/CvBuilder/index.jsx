@@ -1,51 +1,50 @@
-
 import { useState } from "react";
 
 import styles from "./builder.module.css";
 import CvTable from "../CvTable";
 import CvForm from "../CvForm";
 import CvPreview from "../CvPreview";
+import { useCVs } from "../../../hooks/useCVs";
 
 function CvBuilder() {
-  const [cvs, setCvs] = useState([]);
-  const [selectedCV, setSelectedCV] = useState(null);
+  const { cvs, selectedCV, totalCVs, handleCreateCV, handleShowCV, handleDeleteCV } = useCVs();
 
-  const handleCreateCV = (values) => {
-    const newCV = {
-      id: Date.now(),
-      ...values,
-    };
+  // const [cvs, setCvs] = useState([]);
+  // const [selectedCV, setSelectedCV] = useState(null);
 
-    setCvs((prev) => [...prev, newCV]);
-    setSelectedCV(newCV);
-  };
+  // const handleCreateCV = (values) => {
+  //   const newCV = {
+  //     id: Date.now(),
+  //     ...values,
+  //   };
 
-  const handleShowCV = (cv) => {
-    setSelectedCV(cv);
-  };
+  //   setCvs((prev) => [...prev, newCV]);
+  //   setSelectedCV(newCV);
+  // };
 
-  const handleDeleteCV = (id) => {
-    setCvs((prev) => {
-      const updatedCVs = prev.filter((cv) => cv.id !== id);
+  // const handleShowCV = (cv) => {
+  //   setSelectedCV(cv);
+  // };
 
-      if (selectedCV?.id === id) {
-        setSelectedCV(updatedCVs[0] || null);
-      }
+  // const handleDeleteCV = (id) => {
+  //   setCvs((prev) => {
+  //     const updatedCVs = prev.filter((cv) => cv.id !== id);
 
-      return updatedCVs;
-    });
-  };
+  //     if (selectedCV?.id === id) {
+  //       setSelectedCV(updatedCVs[0] || null);
+  //     }
+
+  //     return updatedCVs;
+  //   });
+  // };
 
   return (
     <div className={styles.container}>
       <div className={styles.leftColumn}>
         <CvForm onSubmit={handleCreateCV} />
 
-        <CvTable
-          cvs={cvs}
-          onShow={handleShowCV}
-          onDelete={handleDeleteCV}
-        />
+
+        <CvTable cvs={cvs} onShow={handleShowCV} onDelete={handleDeleteCV} totalCVs={totalCVs} />
       </div>
 
       <CvPreview cvData={selectedCV} />

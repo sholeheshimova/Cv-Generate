@@ -1,7 +1,7 @@
 
 import styles from "./table.module.css";
 
-function CvTable({ cvs, onShow, onDelete }) {
+function CvTable({ cvs, onShow, onDelete, totalCVs }) {
   return (
     <div className={styles.tableContainer}>
       <div className={styles.tableHeader}>
@@ -10,7 +10,7 @@ function CvTable({ cvs, onShow, onDelete }) {
           <p>Manage your created resumes</p>
         </div>
 
-        <span className={styles.count}>{cvs.length} CVs</span>
+        <span className={styles.count}>{totalCVs} CVs</span>
       </div>
 
       {cvs.length === 0 ? (
